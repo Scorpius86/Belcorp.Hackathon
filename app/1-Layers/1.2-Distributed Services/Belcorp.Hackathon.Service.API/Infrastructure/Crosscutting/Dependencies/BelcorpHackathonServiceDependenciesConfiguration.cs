@@ -1,6 +1,6 @@
 ﻿namespace Belcorp.Hackathon.Service.API.Infrastructure.Crosscutting.Dependencies
 {
-    using Belcorp.Hackathon.Service.API.Controllers.Infrastructure.Security;
+    using Belcorp.Hackathon.Service.API.ApplicationServices;    
     using Belcorp.Hackathon.Service.API.Infrastructure.Data.Context;
     using Belcorp.Hackathon.Service.API.Infrastructure.Data.Query;
     using Microsoft.EntityFrameworkCore;

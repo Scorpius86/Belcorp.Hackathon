@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Belcorp.Hackathon.Service.API.Controllers.Infrastructure.Security
+namespace Belcorp.Hackathon.Client.Web.Infrastructure.Transport
 {
-    public class SecurityDomainService
+    public class BaseRequest
     {
     }
 }

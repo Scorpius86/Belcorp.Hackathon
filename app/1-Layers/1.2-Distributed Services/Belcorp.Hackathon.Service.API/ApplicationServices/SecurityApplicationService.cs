@@ -1,12 +1,8 @@
-﻿using Belcorp.Hackathon.Service.API.Controllers.Infrastructure.Security.Transport.Request;
-using Belcorp.Hackathon.Service.API.Controllers.Infrastructure.Security.Transport.Response;
-using Belcorp.Hackathon.Service.API.Infrastructure.Data.Query;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Belcorp.Hackathon.Service.API.Infrastructure.Data.Query;
+using Belcorp.Hackathon.Service.API.Infrastructure.Transport.Security.Request;
+using Belcorp.Hackathon.Service.API.Infrastructure.Transport.Security.Response;
 
-namespace Belcorp.Hackathon.Service.API.Controllers.Infrastructure.Security
+namespace Belcorp.Hackathon.Service.API.ApplicationServices
 {
     public class SecurityApplicationService
     {

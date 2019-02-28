@@ -1,4 +1,4 @@
-﻿namespace Belcorp.Hackathon.Service.API.Controllers.Infrastructure.Security.Transport.Request
+﻿namespace Belcorp.Hackathon.Service.API.Infrastructure.Transport.Security.Request
 {
     using Belcorp.Hackathon.Service.API.Infrastructure.Data.Query.Security.Parameters;
     using System;

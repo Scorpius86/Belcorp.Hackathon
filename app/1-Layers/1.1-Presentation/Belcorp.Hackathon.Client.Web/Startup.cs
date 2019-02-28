@@ -1,3 +1,4 @@
+using Belcorp.Hackathon.Client.Web.Infrastructure.Transport.Configuration.Response;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,24 +10,44 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Belcorp.Hackathon.Client.Web
 {
     public class Startup
-    {
+    {        
+        public IConfiguration _configuration { get; }
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+        {   
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllCORS",
+                    builder =>
+                    {
+                        builder
+                            .AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials();
+                    });
+            });
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.ContractResolver =
+                        new Newtonsoft.Json.Serialization.DefaultContractResolver();
+                });
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddOptions();
+            services.Configure<GetConfigurationServicesResponse>(_configuration.GetSection("ConfigurationServices"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +64,7 @@ namespace Belcorp.Hackathon.Client.Web
                 app.UseHsts();
             }
 
+            app.UseCors("AllowAllCORS");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
