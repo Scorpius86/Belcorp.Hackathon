@@ -6,15 +6,18 @@ import { AppComponent } from './app.component';
 
 import * as moment from 'moment';
 import 'moment/locale/es';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, CommonModule } from '@angular/common';
 import localePe from '@angular/common/locales/es-PE';
 import { LoadingService, SecurityGuardService, ConfigurationStorageService, ConfigurationService, StorageService } from './services';
 import { NetworkManager } from './agents/common/networkmanager';
 import { ConfigurationAgent } from './agents';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthenticationInterceptor } from './agents/common/authentication-interceptor';
 import { MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE } from '@angular/material';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import { AuthenticationModule } from './modules/security/authentication/authentication.module';
+import { MainModule } from './modules/main/main.module';
+import { CoreModule } from './modules/core/core.module';
 
 registerLocaleData(localePe);
 
@@ -37,8 +40,13 @@ export const MY_FORMATS = {
     AppComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    CoreModule,
+    AuthenticationModule,
+    MainModule,
+    AppRoutingModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-PE' },

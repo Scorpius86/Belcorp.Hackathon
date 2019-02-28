@@ -49,6 +49,7 @@
     <None Remove="ClientApp\src\app\models\configuration\configuration.model.ts" />
     <None Remove="ClientApp\src\app\models\configuration\public.configuration.model.ts" />
     <None Remove="ClientApp\src\app\models\security\user.model.ts" />
+    <None Remove="ClientApp\src\app\modules\core\core.module.ts" />
     <None Remove="ClientApp\src\app\modules\main\main-routing.module.ts" />
     <None Remove="ClientApp\src\app\modules\security\authentication\authentication.routing.module.ts" />
     <None Remove="ClientApp\src\app\services\common\loading.service.ts" />
@@ -103,6 +104,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\models\configuration\configuration.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\configuration\public.configuration.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\security\user.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\core\core.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modules\main\main-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modules\security\authentication\authentication.routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\common\loading.service.ts" />
