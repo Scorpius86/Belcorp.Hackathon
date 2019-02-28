@@ -60,6 +60,8 @@
     <None Remove="ClientApp\src\app\services\security\login.service.ts" />
     <None Remove="ClientApp\src\app\services\security\security-guard.service.ts" />
     <None Remove="ClientApp\src\app\shared\app.constants.ts" />
+    <None Remove="ClientApp\src\app\shared\material\index.ts" />
+    <None Remove="ClientApp\src\app\shared\material\material.module.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -112,6 +114,8 @@
     <TypeScriptCompile Include="ClientApp\src\app\services\security\login.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\security\security-guard.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\app.constants.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\material\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\material\material.module.ts" />
   </ItemGroup>
 
   <ItemGroup>
