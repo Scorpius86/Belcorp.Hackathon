@@ -1,12 +1,8 @@
-﻿namespace Belcorp.Hackathon.Service.API.Controllers.Infrastructure.Security
+﻿namespace Belcorp.Hackathon.Service.API.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using Belcorp.Hackathon.Service.API.Controllers.Infrastructure.Security.Transport.Request;
-    using Belcorp.Hackathon.Service.API.Controllers.Infrastructure.Security.Transport.Response;
-    using Microsoft.AspNetCore.Http;
+    using Belcorp.Hackathon.Service.API.ApplicationServices;
+    using Belcorp.Hackathon.Service.API.Infrastructure.Transport.Security.Request;
+    using Belcorp.Hackathon.Service.API.Infrastructure.Transport.Security.Response;
     using Microsoft.AspNetCore.Mvc;        
 
     public class SecurityController : BaseController
