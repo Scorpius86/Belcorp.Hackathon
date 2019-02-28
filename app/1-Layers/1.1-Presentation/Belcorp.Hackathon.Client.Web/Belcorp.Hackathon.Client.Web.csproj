@@ -16,6 +16,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
     <DotNetCliToolReference Include="Microsoft.DotNet.Xdt.Tools" Version="2.0.0" />
   </ItemGroup>
 
@@ -27,6 +28,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\adapters\index.ts" />
+    <None Remove="ClientApp\src\app\agents\index.ts" />
+    <None Remove="ClientApp\src\app\modules\main\main-routing.module.ts" />
+    <None Remove="ClientApp\src\app\services\index.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="ClientApp\angular.json" />
     <Content Include="ClientApp\e2e\tsconfig.e2e.json" />
     <Content Include="ClientApp\package.json" />
@@ -35,6 +43,20 @@
     <Content Include="ClientApp\src\tslint.json" />
     <Content Include="ClientApp\tsconfig.json" />
     <Content Include="ClientApp\tslint.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\models\" />
+    <Folder Include="ClientApp\src\app\modules\security\authentication\" />
+    <Folder Include="ClientApp\src\app\shared\" />
+    <Folder Include="ClientApp\src\styles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\adapters\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\agents\index.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\main\main-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\index.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
