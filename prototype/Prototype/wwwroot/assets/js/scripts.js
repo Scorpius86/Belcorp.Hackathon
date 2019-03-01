@@ -35,6 +35,7 @@ var toggleInfo = exports.toggleInfo = function toggleInfo() {
     var showDiv = document.querySelector(".info-product");
     var showDiv2 = document.querySelector(".info-product-2");
     var showDivDetail = document.querySelector(".info-product-detail");
+    var footer = document.querySelector(".footer-ip");
     ipt.addEventListener("input", function (ev) {
       if (this.value == "00006") {
         showDiv.style.display = "block";
@@ -46,6 +47,7 @@ var toggleInfo = exports.toggleInfo = function toggleInfo() {
         showDiv2.style.display = "block";
       } else {
         showDiv2.style.display = "none";
+        footer.style.bottom = "inherit";
         // showDivDetail.style.display = "none";
       }
     });
@@ -73,11 +75,13 @@ var addShowBtn_2 = exports.addShowBtn_2 = function addShowBtn_2() {
     var showDiv = document.querySelector(".info-product-2");
     var showDivDetail = document.querySelector(".info-product-detail-2");
     var update = document.querySelector("#update");
+    var footer = document.querySelector(".footer-ip");
 
     btn.addEventListener("click", function () {
       showDiv.style.display = "none";
       showDivDetail.style.display = "block";
       update.innerHTML = "Total : S/ 51.90";
+      footer.style.bottom = "0";
     });
   }
 };
