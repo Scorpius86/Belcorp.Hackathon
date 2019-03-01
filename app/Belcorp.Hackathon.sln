@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{4B310C1E-F2C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Belcorp.Hackathon.Client.Web", "1-Layers\1.1-Presentation\Belcorp.Hackathon.Client.Web\Belcorp.Hackathon.Client.Web.csproj", "{778DB744-AB70-4EA9-9392-D01C096181D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belcorp.Hackathon.Service.API", "1-Layers\1.2-Distributed Services\Belcorp.Hackathon.Service.API\Belcorp.Hackathon.Service.API.csproj", "{CB0E0940-5D19-49C6-825D-9A5461BAEB61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Belcorp.Hackathon.Service.API", "1-Layers\1.2-Distributed Services\Belcorp.Hackathon.Service.API\Belcorp.Hackathon.Service.API.csproj", "{CB0E0940-5D19-49C6-825D-9A5461BAEB61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
