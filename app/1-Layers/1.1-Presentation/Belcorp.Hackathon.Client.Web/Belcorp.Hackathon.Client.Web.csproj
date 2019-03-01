@@ -28,6 +28,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\agents\common\networkmanager\network-manager.ts" />
+    <None Remove="ClientApp\src\app\agents\configuration\configuration.agent.ts" />
+    <None Remove="ClientApp\src\app\agents\configuration\response\get-configuration-services-response.ts" />
+    <None Remove="ClientApp\src\app\agents\core\agent\base-agent.ts" />
+    <None Remove="ClientApp\src\app\agents\core\agent\path.ts" />
+    <None Remove="ClientApp\src\app\agents\core\base-response.ts" />
+    <None Remove="ClientApp\src\app\agents\core\base-state.response.ts" />
+    <None Remove="ClientApp\src\app\agents\security\security-paths.ts" />
+    <None Remove="ClientApp\src\app\agents\security\security.agent.ts" />
+    <None Remove="ClientApp\src\app\models\configuration\configuration-services.model.ts" />
+    <None Remove="ClientApp\src\app\modules\core.module.ts" />
+    <None Remove="ClientApp\src\app\services\common\storage.ts" />
+    <None Remove="ClientApp\src\app\services\configuration\configuration-storage.ts" />
+    <None Remove="ClientApp\src\app\shared\material\material.module.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="ClientApp\angular.json" />
     <Content Include="ClientApp\e2e\tsconfig.e2e.json" />
     <Content Include="ClientApp\package.json" />
@@ -40,6 +57,23 @@
 
   <ItemGroup>
     <Folder Include="Infrastructure\Transport\Configuration\Request\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\agents\common\networkmanager\network-manager.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\agents\configuration\configuration.agent.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\agents\configuration\response\get-configuration-services-response.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\agents\core\agent\base-agent.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\agents\core\agent\path.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\agents\core\base-response.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\agents\core\base-state.response.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\agents\security\security-paths.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\agents\security\security.agent.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\configuration\configuration-services.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modules\core.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\common\storage.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\configuration\configuration-storage.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\material\material.module.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
