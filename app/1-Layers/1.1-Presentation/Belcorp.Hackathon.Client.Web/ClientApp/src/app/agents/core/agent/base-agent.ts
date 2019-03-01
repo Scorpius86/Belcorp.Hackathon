@@ -1,7 +1,7 @@
 import { Path } from './path';
-import { NetworkManager } from '../../common/networkmanager/network-manager';
-import { PostParameters } from '../../common/networkmanager/post-parameters';
+import { PostParameters, NetworkManager } from '../../common/networkmanager';
 import { Observable } from 'rxjs';
+import { forEach } from '@angular/router/src/utils/collection';
 
 export class BaseAgent {
   private paths: Array<Path> = new Array<Path>();

@@ -1,3 +1,4 @@
 export enum OperationsPaths {
-  GetConfigurationServices = 'api/v1/Configuration/GetConfigurationServices',
+  GetPublicConfiguration = 'api/v1/Configuration/GetPublicConfiguration',
+  GetConfiguration = 'api/v1/Configuration/GetConfiguration'
 }

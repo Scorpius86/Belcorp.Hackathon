@@ -1,9 +1,12 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { MatSnackBar } from '@angular/material';
 import { PostParameters } from './post-parameters';
-import { BaseResponse } from '../../core/base-response';
 import { Observable } from 'rxjs';
+import { BaseResponse } from '../../core/base-response';
+import { GetTokenResponse } from '../../authentication/response/get-token.response';
+import { AppConstants } from '../../../shared/app.constants';
+import { MatSnackBar } from '@angular/material';
 
 @Injectable()
 export class NetworkManager {
@@ -19,6 +22,54 @@ export class NetworkManager {
     private httpClient: HttpClient,
     private snackBar: MatSnackBar
   ) {
+  }
+
+  getTokenPost(postParameters: PostParameters): Observable<BaseResponse> {
+    const headers = new HttpHeaders({ 'content-type': 'application/x-www-form-urlencoded' });
+    const options = { headers: headers };
+
+    const parameters = postParameters.RequestParameter || null;
+
+    const body = new URLSearchParams();
+    body.set('grant_type', 'password');
+    body.set('client_id', 'resourceownerclient');
+    body.set('client_secret', 'dataEventRecordsSecret');
+    body.set('scope', 'apiMaintenance apiProduct apiHome apiImage apiSecurity apiSap apiSurvey apiMessage apiStage apiSetting apiCoding apiProductImage apiExtrapolation');
+    body.set('username', parameters.userName);
+    body.set('password', parameters.password);
+
+    return Observable.create(observer => {
+      this.httpClient.post(`${postParameters.PathOperation}`, body.toString(), options).subscribe(
+        (data: GetTokenResponse) => {
+          try {
+            const response: BaseResponse = <BaseResponse>data;
+            if (data.access_token) {
+              observer.next(response);
+            } else {
+              observer.error('Error inesperado al intentar obtener el token de seguridad.');
+            }
+          } catch (e) {
+            observer.error(e);
+          }
+        }, httpError => {
+          let errorMessage = '';
+          if (httpError.status === 400 && httpError.error.error_description === AppConstants.IdentityValidation.INVALID_USERNAME_OR_PASSWORD) {
+            errorMessage = AppConstants.Messages.USUARIO_PASSWORD_INCORRECTOS;
+
+          } else if (httpError.status === 400 && httpError.error.error === AppConstants.IdentityValidation.INVALID_CLIENT) {
+            errorMessage = AppConstants.Messages.CONFIGURACION_INCORRECTA_IDENTITY_SERVER;
+
+          } else {
+            NetworkManager.log(httpError);
+            errorMessage = AppConstants.Messages.NO_POSIBLE_VERIFICAR_CREDENCIALES_CONTACTE_ADMINISTRADOR_SISTEMAS;
+          }
+          this.snackBar.open(errorMessage, 'close', { duration: 5000 });
+          observer.error(errorMessage);
+        },
+        () => {
+          observer.complete();
+        });
+    });
   }
 
   post(postParameters: PostParameters): Observable<BaseResponse> {
