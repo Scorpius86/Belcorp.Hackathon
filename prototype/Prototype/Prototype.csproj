@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\css\styles.css.map" />
+    <None Include="wwwroot\assets\img\icons_backspace.svg" />
+    <None Include="wwwroot\assets\img\icons_bonificacion.svg" />
+    <None Include="wwwroot\assets\img\icons_clientes.svg" />
+    <None Include="wwwroot\assets\img\icons_ganamas.svg" />
+    <None Include="wwwroot\assets\img\icons_home.svg" />
+    <None Include="wwwroot\assets\img\icons_menu.svg" />
+    <None Include="wwwroot\assets\img\icons_notification.svg" />
+    <None Include="wwwroot\assets\img\icons_pedido.svg" />
+    <None Include="wwwroot\assets\img\icons_search.svg" />
+    <None Include="wwwroot\assets\js\scripts-min.js" />
+    <None Include="wwwroot\assets\js\scripts-min.js.map" />
+    <None Include="wwwroot\assets\js\scripts.js" />
+    <None Include="wwwroot\assets\js\scripts.js.map" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
